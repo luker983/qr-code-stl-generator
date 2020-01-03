@@ -4,6 +4,8 @@
 
 I wanted to print a QR code for home guests to be able to connect to my wifi without me having to write down the password for them. I couldn't find any STL generators for QR codes, so I decided to make one using Python and Blender.
 
+While I designed this with Wifi and 3d printing in mind, you could change the icon to something like a website icon or logo and then insert a URL instead of Wifi credentials. Even if you don't have a printer, you can use the `files/qr.png` image that is generated and hang it up at home or hand it out. 
+
 ## Requirements
 
 * Python 3
