@@ -6,8 +6,8 @@ import subprocess
 blender_path = '/Applications/Blender.app/Contents/MacOS/Blender'
 
 auth_type = 'WPA'
-ssid = 'SSID_GOES_HERE'
-password = 'PASSWORD_GOES_HERE'
+ssid = "SSID GOES HERE"
+password = 'PASSWORD GOES HERE'
 
 data = 'WIFI:T:%s;S:%s;P:%s;;'%(auth_type, ssid, password)
 

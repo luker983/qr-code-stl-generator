@@ -7,7 +7,7 @@ svg_path = 'files/qr.svg'
 icon_path = 'files/wifi.svg'
 output_path = 'qr.stl'
 
-icon_radius = 0.011
+icon_radius = 0.015
 
 qr_height = 2.5
 base_height = 2.5
