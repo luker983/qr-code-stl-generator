@@ -18,10 +18,10 @@ While I designed this with Wifi and 3d printing in mind, you could change the ic
 
 ### Setup
 
-I didn't write an interface or menu or anything like that, so you'll have to adjust the parameters using a text editor. These are the configurable options:
+For the quickest setup, just put your Blender path and wifi information into `qr.py` with a text editor. If you want to configure the STL generation, use the following options:
 
 * `qr.py`
-    - `blender_path`: Path to blender program
+    - `blender_path`: Path to blender program. On MacOS this is something like `/Applications/Blender.app/Contents/MacOS/Blender`
     - `auth_type`: Wifi auth type, valid inputs are `WPA`, `WEP`, and empty
     - `ssid`: Name of your Wifi network    
     - `password`: Password for Wifi network. This all runs locally, but keep in mind that if someone can see your QR code they can also extract the password
