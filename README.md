@@ -34,6 +34,7 @@ For the quickest setup, just put your Blender path and wifi information into `qr
     - `output_path`: Where you want the resulting STL to go
     - `icon_radius`: How big to make space for the center icon, this should be small (0.005 - 0.02)
     - `qr_height`: Height in mm to make the 'black' part of the QR code
+    - `icon_height`: Height in mm to make the icon
     - `base_height`: Height in mm to make the 'white' part of the QR code
     - `qr_length`: Length in mm of the code portion
     - `icon_length`: Length in mm of the center icon
