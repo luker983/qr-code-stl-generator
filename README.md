@@ -39,6 +39,12 @@ For the quickest setup, just put your Blender path and wifi information into `qr
     - `icon_length`: Length in mm of the center icon
     - `base_length`: Length in mm of the base
 
+* In `qr_img.py`The amount of redundancy can be adjusted which allows for things such as icons and such. However, to reduce the density of the code this can be lowered if desired:
+    - `ERROR_CORRECT_L`: About 7% or less errors can be corrected.
+    - `ERROR_CORRECT_M`: About 15% or less errors can be corrected.
+    - `ERROR_CORRECT_Q`: About 25% or less errors can be corrected.
+    - `ERROR_CORRECT_H`: About 30% or less errors can be corrected.
+
 The scripts have other things you can tweak if you wanna dig into it, and I may add more options if it turns out people want some more.
 
 ### Running
