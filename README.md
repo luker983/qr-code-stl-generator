@@ -1,6 +1,6 @@
 # QR Code STL Generator
 
-![Printed QR Code](images/qr.jpg)
+![Printed QR Code](images/qr-print.jpg)
 
 ## About
 
