@@ -55,7 +55,7 @@ If all of the dependecies are installed correctly and the Blender path is correc
 python3 qr.py
 ```
 
-The STL will end up in the current directory by default.
+The STL will end up in the current directory by default. A PNG will also be generated at `files/qr.png`. 
 
 ### Printing
 
