@@ -22,7 +22,7 @@ While I designed this with Wifi and 3d printing in mind, you could change the ic
 For the quickest setup, just put your Blender path and wifi information into `qr.py` with a text editor. If you want to configure the STL generation, use the following options:
 
 * `qr.py`
-    - `blender_path`: Path to blender program. On MacOS this is something like `/Applications/Blender.app/Contents/MacOS/Blender`
+    - `blender_path`: Path to blender program. On MacOS this is something like `/Applications/Blender.app/Contents/MacOS/Blender`. Defaults for other operating systems are in the script
     - `auth_type`: Wifi auth type, valid inputs are `WPA`, `WEP`, and empty
     - `ssid`: Name of your Wifi network    
     - `password`: Password for Wifi network. This all runs locally, but keep in mind that if someone can see your QR code they can also extract the password
@@ -63,4 +63,8 @@ PrusaSlicer is what I use to slice my prints and it has a really cool feature th
 
 ## Troubleshooting
 
-If you run into issues, feel free to email me at lukerindels98@hotmail.com
+* Make sure you're using 3.x
+* Make sure you're using Blender 2.8x
+*
+If you run into other issues, feel free to email me at lukerindels98@hotmail.com
+
