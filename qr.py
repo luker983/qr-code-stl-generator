@@ -3,9 +3,13 @@
 import qr_img
 import subprocess
 
-# you probably need to change this!
+### you probably need to change these fields!
+## default Ubuntu Store Blender location
+# blender_path = '/snap/bin/blender'
+## default MacOS Blender location
 blender_path = '/Applications/Blender.app/Contents/MacOS/Blender'
-
+## default Windows Blender location
+# blender_path = 'C:/Program Files/Blender Foundation/Blender/blender.exe'
 
 auth_type = 'WPA' # WPA or WEP or '' 
 ssid = "SSID GOES HERE" # name of your wifi network 

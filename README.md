@@ -10,11 +10,10 @@ While I designed this with Wifi and 3d printing in mind, you could change the ic
 
 ## Requirements
 
-* Python 3
-    - `pip3 install pillow`
-    - `pip3 install qrcode`
+* [Python 3](https://www.python.org/)
+    - `pip3 install -r requirements.txt`
 
-* Blender 2.8
+* [Blender 2.8](https://www.blender.org/)
 
 ## Usage
 
