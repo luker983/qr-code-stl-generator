@@ -65,6 +65,6 @@ PrusaSlicer is what I use to slice my prints and it has a really cool feature th
 
 * Make sure you're using 3.x
 * Make sure you're using Blender 2.8x
-*
+
 If you run into other issues, feel free to email me at lukerindels98@hotmail.com
 
