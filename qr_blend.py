@@ -38,10 +38,6 @@ bpy.ops.object.select_all(action='SELECT')
 objects = bpy.context.scene.objects
 bpy.context.view_layer.objects.active = objects[0]
 
-#for obj in objects:
-#    obj.select_set(state = obj.type == "CURVE")
-#    bpy.context.view_layer.objects.active = obj
-
 # convert curves to mesh
 bpy.ops.object.convert(target='MESH')
 
@@ -144,14 +140,9 @@ if multi:
 
     bpy.ops.object.join()
 
-    bpy.ops.export_mesh.stl(filepath="interior" + output_path, use_selection=True)
+    bpy.ops.export_mesh.stl(filepath="interior_with_icon_" + output_path, use_selection=True)
 
     qr = bpy.context.object
-    # separate all loose parts
-#    bpy.ops.object.mode_set(mode='EDIT')
-#    bpy.ops.mesh.select_all(action='SELECT')
- #   bpy.ops.mesh.separate(type='LOOSE')
- #   bpy.ops.object.mode_set(mode='OBJECT')
 
     qr = bpy.context.object
     # create base and get it into position    
@@ -160,8 +151,6 @@ if multi:
     bpy.ops.object.editmode_toggle()
 
     bpy.ops.mesh.extrude_region_move(MESH_OT_extrude_region={"use_normal_flip":False, "mirror":False}, TRANSFORM_OT_translate={"value":(0, 0, base_height / 2), "orient_type":'NORMAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'NORMAL', "constraint_axis":(False, False, True), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_target":'CLOSEST', "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "release_confirm":False, "use_accurate":False})
-
-
 
     bpy.ops.mesh.select_all(action='SELECT')
 
@@ -177,20 +166,6 @@ if multi:
 
     bpy.context.active_object.location = (0, 0, base_height / 4)
 
- #   i = 0
- #   objects = bpy.context.scene.objects
- #   for obj in objects:
- #       if bpy.context.object == obj:
- #           print('found same object')
- #           continue
- #       if i == 50:
- #           break
- #       i += 1
- #       modifier = bpy.context.object.modifiers.new(name="Boolean", type="BOOLEAN")
- #       modifier.object = obj
- #       modifier.operation = 'DIFFERENCE'
- #       bpy.ops.object.modifier_apply(apply_as='DATA', modifier="Boolean")
-   
     outside = bpy.context.object 
     modifier = outside.modifiers.new(name="Boolean", type="BOOLEAN")
     modifier.object = qr
