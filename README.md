@@ -61,6 +61,10 @@ The STL will end up in the current directory by default. A PNG will also be gene
 
 PrusaSlicer is what I use to slice my prints and it has a really cool feature that allows you to pause prints at a certain layer to change filaments. Simply import the STL, set the layer where you wanna swap, then the printer will pause at that layer and allow for a filament swap. I'm told that other slicers like Cura also have this feature.
 
+#### Multi-Color Printing
+
+I don't have a multi-color printer, but I attempted to implement an option that would generate three different STLs so that they can be printed in different colors within the same layer. To enable this, set `multi = True` in `qr_blend.py`. If you try it, please let me know if it works or not!
+
 ## Troubleshooting
 
 * Make sure you're using 3.x
