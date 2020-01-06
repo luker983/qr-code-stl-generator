@@ -86,16 +86,11 @@ bpy.ops.mesh.select_all(action='DESELECT')
 bpy.ops.mesh.select_non_manifold()
 bpy.ops.mesh.edge_split()
 bpy.ops.object.editmode_toggle()
-bpy.ops.export_mesh.stl(filepath="before_bevel" + output_path, use_selection=True)
 bpy.ops.object.editmode_toggle()
 
-# if multi:
-bpy.ops.mesh.bevel(offset=0.00025, offset_pct=0, vertex_only=False)
-bpy.ops.export_mesh.stl(filepath="1_" + output_path, use_selection=True)
+if multi:
+    bpy.ops.mesh.bevel(offset=0.00025, offset_pct=0, vertex_only=False)
 
-bpy.ops.object.editmode_toggle()
-bpy.ops.export_mesh.stl(filepath="after_bevel" + output_path, use_selection=True)
-bpy.ops.object.editmode_toggle()
 bpy.ops.object.editmode_toggle()
 
 qr = bpy.context.object
@@ -127,15 +122,29 @@ bpy.ops.object.editmode_toggle()
 
 icon = bpy.context.object
 
+# experimental
 if multi:
     # join icon and QR
     bpy.ops.object.select_all(action='DESELECT')
     qr.select_set(state = True)
-    icon.select_set(state = True)
     bpy.context.view_layer.objects.active = qr
+
+    bpy.ops.export_mesh.stl(filepath="interior_no_icon_" + output_path, use_selection=True)
+    
+    bpy.ops.object.select_all(action='DESELECT')
+    icon.select_set(state = True)
+    bpy.context.view_layer.objects.active = icon
+
+    bpy.ops.export_mesh.stl(filepath="icon_" + output_path, use_selection=True)
+
+    bpy.ops.object.select_all(action='DESELECT')
+    icon.select_set(state = True)
+    qr.select_set(state = True)
+    bpy.context.view_layer.objects.active = qr
+
     bpy.ops.object.join()
 
-    bpy.ops.export_mesh.stl(filepath="2_" + output_path, use_selection=True)
+    bpy.ops.export_mesh.stl(filepath="interior" + output_path, use_selection=True)
 
     qr = bpy.context.object
     # separate all loose parts
@@ -168,8 +177,6 @@ if multi:
 
     bpy.context.active_object.location = (0, 0, base_height / 4)
 
-    # boolean it all up
- #   print('Booling it up')
  #   i = 0
  #   objects = bpy.context.scene.objects
  #   for obj in objects:
@@ -183,17 +190,18 @@ if multi:
  #       modifier.object = obj
  #       modifier.operation = 'DIFFERENCE'
  #       bpy.ops.object.modifier_apply(apply_as='DATA', modifier="Boolean")
-    
-    modifier = bpy.context.object.modifiers.new(name="Boolean", type="BOOLEAN")
+   
+    outside = bpy.context.object 
+    modifier = outside.modifiers.new(name="Boolean", type="BOOLEAN")
     modifier.object = qr
     modifier.operation = 'DIFFERENCE'
     bpy.ops.object.modifier_apply(apply_as='DATA', modifier="Boolean")
 
     # restore base to rightful place
-    bpy.context.active_object.location = (0, 0, 0)
-    bpy.context.active_object.dimensions = (base_length, base_length, base_height)
+    outside.location = (0, 0, 0)
+    outside.dimensions = (base_length, base_length, base_height)
 
-    bpy.ops.export_mesh.stl(filepath="1_" + output_path, use_selection=True)
+    bpy.ops.export_mesh.stl(filepath="exterior_" + output_path, use_selection=True)
 
 else:
     # create and resize base, then extrude down to negative base_height
