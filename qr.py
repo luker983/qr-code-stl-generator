@@ -33,5 +33,5 @@ if multi:
     qr_img.generate_svg(data=data, output_path='files/qr_multi.svg', factory=qrcode.image.svg.SvgPathFillImage) 
 
 # generate STL
-#subprocess.run([blender_path, '--background', '--python', 'qr_blend.py'])
-subprocess.run([blender_path, '--python', 'qr_blend.py'])
+subprocess.run([blender_path, '--background', '--python', 'qr_blend.py'])
+#subprocess.run([blender_path, '--python', 'qr_blend.py'])
