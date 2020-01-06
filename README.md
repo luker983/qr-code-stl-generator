@@ -69,6 +69,7 @@ I don't have a multi-color printer, but I attempted to implement an option that 
 
 * Make sure you're using 3.x
 * Make sure you're using Blender 2.8x
+* Lots of people are having issues with modules being installed but not seen by Python, make sure that your paths are set up correctly. Stack overflow has tons of answers on this. [Here's one](https://stackoverflow.com/questions/15052206/python-pip-install-module-is-not-found-how-to-link-python-to-pip-location)
 
 If you run into other issues, feel free to email me at lukerindels98@hotmail.com
 
