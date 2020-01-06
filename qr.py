@@ -16,9 +16,6 @@ auth_type = 'WPA' # WPA or WEP or ''
 ssid = "SSID GOES HERE" # name of your wifi network 
 password = 'PASSWORD GOES HERE' # wifi password
 
-# experimental multi-material option
-multi = True 
-
 # if you don't want to make a wifi qr code, change this to whatever you do want
 # data = 'https://example.com'
 data = 'WIFI:T:%s;S:%s;P:%s;;'%(auth_type, ssid, password)
@@ -28,9 +25,6 @@ qr_img.generate_png(data=data, icon_path='files/wifi.png', output_path='files/qr
 
 # generate svg and placing at output_path, necessary if you don't already have an SVG
 qr_img.generate_svg(data=data, output_path='files/qr.svg')
-
-if multi:
-    qr_img.generate_svg(data=data, output_path='files/qr_multi.svg', factory=qrcode.image.svg.SvgPathFillImage) 
 
 # generate STL
 subprocess.run([blender_path, '--background', '--python', 'qr_blend.py'])
