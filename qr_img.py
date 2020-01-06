@@ -36,12 +36,12 @@ def generate_png(data, icon_path, output_path='qr.png', box_size=20, icon_size=2
 
 # generate svg
 
-def generate_svg(data, output_path='qr.svg', box_size=20):
+def generate_svg(data, output_path='qr.svg', box_size=20, factory=qrcode.image.svg.SvgImage):
     # ERROR_CORRECT_H uses high redundancy, if you want something different change to ERROR_CORRRECT_(L|M|Q|H)
     qr = qrcode.QRCode(
         error_correction = qrcode.constants.ERROR_CORRECT_H,
         box_size = box_size,
-        image_factory = qrcode.image.svg.SvgImage
+        image_factory = factory
     )
 
     qr.add_data(data)
