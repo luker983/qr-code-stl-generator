@@ -200,13 +200,14 @@ if multi:
     # restore base to rightful place
     outside.location = (0, 0, 0)
     outside.dimensions = (base_length, base_length, base_height)
+    outside.scale[2] = 2
 
     bpy.ops.export_mesh.stl(filepath="exterior_" + output_path, use_selection=True)
 
 else:
     # create and resize base, then extrude down to negative base_height
     bpy.ops.mesh.primitive_plane_add(enter_editmode=False, location=(0, 0, 0))
-    bpy.context.active_object.dimensions = (base_length, base_length, base_length)
+    bpy.context.active_object.dimensions = (base_length, base_length, 0)
     bpy.ops.object.editmode_toggle()
 
     bpy.ops.transform.rotate(value=3.14159, orient_axis='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(True, False, False), mirror=True, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False)
