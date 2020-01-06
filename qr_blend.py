@@ -18,7 +18,7 @@ qr_length = 90 # length in mm of the QR code part
 icon_length = 18 # length in mm of the icon
 base_length = 100 # length in mm of the base
 
-multi = True # experimental feature for multimaterial printers
+multi = False # experimental feature for multimaterial printers
 
 # used for clearing the center of QRness
 def get_distance(p1,p2):
