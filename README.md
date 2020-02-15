@@ -38,7 +38,7 @@ For the quickest setup, just put your Blender path and wifi information into `qr
     - `qr_length`: Length in mm of the code portion
     - `icon_length`: Length in mm of the center icon
     - `base_length`: Length in mm of the base
-    - `multi`: Experimental feature that generates each three STLs independently for multi-colored prints
+    - `multi`: Experimental feature that generates three STLs independently for multi-colored prints
 
 * In `qr_img.py`The amount of redundancy can be adjusted which allows for things such as icons and such. However, to reduce the density of the code this can be lowered if desired:
     - `ERROR_CORRECT_L`: About 7% or less errors can be corrected.
