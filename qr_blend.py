@@ -48,7 +48,8 @@ bpy.ops.object.join()
 bpy.ops.object.origin_set(type='GEOMETRY_ORIGIN', center='MEDIAN')
 
 # resize based on qr_length
-bpy.context.active_object.dimensions = (qr_length, qr_length, qr_length)
+qr_scale = qr_length / bpy.context.active_object.dimensions[0]
+bpy.context.active_object.scale = (qr_scale, ) * 3
 
 # switch to edit mode, select all faces, convert tris to quads
 bpy.ops.object.editmode_toggle()
@@ -105,7 +106,8 @@ bpy.ops.object.join()
 bpy.ops.object.origin_set(type='GEOMETRY_ORIGIN', center='MEDIAN')
 
 # resize based on icon_length
-bpy.context.active_object.dimensions = (icon_length, icon_length, icon_length)
+icon_scale = icon_length / bpy.context.active_object.dimensions[0]
+bpy.context.active_object.scale = (icon_scale, ) * 3
 
 # convert tris to quads
 bpy.ops.object.editmode_toggle()
