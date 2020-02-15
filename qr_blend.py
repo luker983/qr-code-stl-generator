@@ -45,7 +45,7 @@ bpy.ops.object.convert(target='MESH')
 bpy.ops.object.join()
 
 # reset object origin (useful for scaling and keeping things centered)
-bpy.ops.object.origin_set(type='GEOMETRY_ORIGIN', center='MEDIAN')
+bpy.ops.object.origin_set(type='GEOMETRY_ORIGIN', center='BOUNDS')
 
 # resize based on qr_length
 bpy.context.active_object.dimensions = (qr_length, qr_length, qr_length)
